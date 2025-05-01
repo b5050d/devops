@@ -22,10 +22,11 @@ def webhook():
                 [
                     'echo',
                     'hello',
-                    '>'
-                    '/home/b5050d/Workspace/finances/devops/deploy_hook/test.txt',
+                    '>',
+                    'test.txt',
                 ]
             )
+            print("Ok, I should have written the file???")
         except:
             print("Failed to write :/")
     return "Yeah working on it"
