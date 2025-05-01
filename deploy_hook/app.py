@@ -13,6 +13,22 @@ app = Flask(__name__)
 def index():
     return "Hello, World!"  
 
+@app.route('/webhook', methods=['GET','POST'])
+def webhook():
+    if request.method == 'POST':
+        # Do somethign simple for now to make sure we know its working
+        try:
+            subprocess.run(
+                [
+                    'echo',
+                    'hello',
+                    '>'
+                    '/home/b5050d/Workspace/finances/devops/deploy_hook/test.txt',
+                ]
+            )
+        except:
+            print("Failed to write :/")
+    return "Yeah working on it"
 
 # @app.route('/webhook', methods=['POST'])
 # def webhook():
