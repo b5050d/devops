@@ -18,15 +18,8 @@ def webhook():
     if request.method == 'POST':
         # Do somethign simple for now to make sure we know its working
         try:
-            subprocess.run(
-                [
-                    'echo',
-                    'hello',
-                    '>',
-                    'test.txt',
-                ]
-            )
-            print("Ok, I should have written the file???")
+            subprocess.run("echo hi > test.txt", shell=True)
+            print("Ok, I should have written the file")
         except:
             print("Failed to write :/")
     return "Yeah working on it"
