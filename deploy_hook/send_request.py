@@ -1,5 +1,6 @@
 import requests
 
+
 def send_post_request(url, data):
     try:
         response = requests.post(url, data=data)
@@ -8,6 +9,7 @@ def send_post_request(url, data):
     except requests.exceptions.RequestException as e:
         print(f"Request failed: {e}")
         return None
+
 
 # Example usage:
 url = "http://192.168.10.64:5000/webhook"
