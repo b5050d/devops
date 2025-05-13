@@ -9,3 +9,6 @@ To set it up:
 
 To check if its working or use it without really committing:
 > pre-commit run --all-files
+
+NOTE: when using pre-commit, know that it will run on the entire repo, not just the sub folder
+
