@@ -9,6 +9,7 @@ REMOTE=$(git rev-parse @{u})
 BASE=$(git merge-base @ @{u})
 
 if [ "$LOCAL" = "$REMOTE" ]; then
+<<<<<<< HEAD
 	echo "Repo up to date"
 elif [ "$LOCAL" = "$BASE" ]; then
 	echo "Pulling changes"
@@ -19,3 +20,15 @@ elif [ "$REMOTE" = "$BASE" ]; then
 else
 	echo "Diverged - manual intervention needed"
 fi
+=======
+        echo "Repo up to date"
+elif [ "$LOCAL" = "$BASE" ]; then
+        echo "Pulling changes"
+        git pull
+        sudo systemctl restart portfolio
+elif [ "$REMOTE" = "$BASE" ]; then
+        echo "Local is ahead of remote"
+else
+        echo "Diverged - manual intervention needed"
+fi
+>>>>>>> 30954186b15c0c0e73026a30835b87c171964f7b
