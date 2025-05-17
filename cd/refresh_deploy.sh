@@ -13,6 +13,8 @@ if [ "$LOCAL" = "$REMOTE" ]; then
 elif [ "$LOCAL" = "$BASE" ]; then
         echo "Pulling changes"
         git pull
+        # installing any new packages for prod
+        /home/b5050d/Workspace/portfolio/venv/bin/pip install -r requirements.txt
         sudo systemctl restart portfolio
 elif [ "$REMOTE" = "$BASE" ]; then
         echo "Local is ahead of remote"
